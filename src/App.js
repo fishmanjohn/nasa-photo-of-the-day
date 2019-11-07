@@ -5,13 +5,13 @@ import Header from "./header";
 import Card from "./card";
 
 function App() {
-const [media, setMedia] = useState();
+const [media, setMedia] = useState("");
 const [error, setError] = useState();
+
 useEffect(() => {
   axios.get("https://api.nasa.gov/planetary/apod?api_key=mdEHROZHk1G1TALx7LBw4jybVmzGbDtsme1mssOI")
   
   .then(response =>{
-    console.log(response.data)
     setMedia(response.data)
   })
   .catch( err => {
@@ -28,7 +28,12 @@ console.log(media)
       <Header/>
       </section>
       <section className="mainContent">
-     <Card prop={media}/>
+      <div>
+            <img alt="Space Picture" src={media.hdurl}></img>
+            <h1>{media.title}</h1>
+            <p>{media.explanation}</p>
+            <p>{media.date}</p>
+        </div>
       </section>
 
     </div>
