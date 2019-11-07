@@ -28,12 +28,7 @@ console.log(media)
       <Header/>
       </section>
       <section className="mainContent">
-      <div>
-            <img alt="Space Picture" src={media.hdurl}></img>
-            <h1>{media.title}</h1>
-            <p>{media.explanation}</p>
-            <p>{media.date}</p>
-        </div>
+      <Card media={media}/>
       </section>
 
     </div>
