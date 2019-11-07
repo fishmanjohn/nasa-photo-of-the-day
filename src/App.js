@@ -1,9 +1,16 @@
 import React,{useState, useEffect} from "react";
-import "./App.css";
 import axios from "axios";
 import Header from "./header";
 import Card from "./card";
+import styled from "styled-components";
 
+
+const AppDiv = styled.div`
+font-family:  -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+sans-serif;
+text-align: center;
+`;
 function App() {
 const [media, setMedia] = useState("");
 const [error, setError] = useState();
@@ -23,7 +30,7 @@ useEffect(() => {
 console.log(media)
 
   return (
-    <div className="App">
+    <AppDiv>
       <section className ="header">
       <Header/>
       </section>
@@ -31,7 +38,7 @@ console.log(media)
       <Card media={media}/>
       </section>
 
-    </div>
+      </AppDiv>
   );
 }
 
